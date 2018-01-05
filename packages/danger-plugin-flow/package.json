@@ -14,7 +14,7 @@
   },
   "homepage": "https://github.com/tychota/danger-plugin-flow#readme",
   "keywords": ["danger", "danger-plugin", "flowtype"],
-  "version": "0.0.0-development",
+  "version": "0.0.1",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
   "scripts": {
