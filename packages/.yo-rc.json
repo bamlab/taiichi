@@ -1,0 +1,11 @@
+{
+  "generator-danger-plugin": {
+    "promptValues": {
+      "authorName": "tychota",
+      "authorEmail": "tychot@bam.tech",
+      "githubUsername": "tychota",
+      "useYarn": true,
+      "useTypeScript": true
+    }
+  }
+}

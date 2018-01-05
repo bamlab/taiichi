@@ -1,0 +1,19 @@
+{
+  "devDependencies": {
+    "cz-lerna-changelog": "^1.2.1",
+    "lerna": "^2.5.1"
+  },
+  "version": "0.0.0-development",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tychota/taiichi.git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-lerna-changelog"
+    }
+  },
+  "dependencies": {
+    "lerna-semantic-release": "^9.1.0"
+  }
+}
