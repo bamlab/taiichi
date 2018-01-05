@@ -10,6 +10,6 @@ node_js:
   - '9'
 before_install: .travis/before_install.sh
 after_success: .travis/after_success.sh
-script: npm run lint && npm test
+script: npm test
 git:
   depth: 1
