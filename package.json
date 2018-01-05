@@ -2,7 +2,12 @@
   "scripts": {
     "precommit": "lint-staged",
     "commit": "git-cz",
-    "commitmsg": "validate-commit-msg"
+    "semantic-release": "lerna-semantic-release pre && lerna-semantic-release post && lerna-semantic-release perform",
+    "commitmsg": "validate-commit-msg",
+    "postinstall": "lerna bootstrap",
+    "prepush": "npm run lint && npm run test",
+    "test": "lerna run test",
+    "lint": "eslint packages"
   },
   "version": "0.0.0-development",
   "repository": {
@@ -13,6 +18,9 @@
     "commitizen": {
       "path": "./node_modules/cz-lerna-changelog"
     }
+  },
+  "lint-staged": {
+    "*.@(ts|tsx)": ["tslint --fix", "npm run prettier-write --", "git add"]
   },
   "devDependencies": {
     "cz-lerna-changelog": "^1.2.1",

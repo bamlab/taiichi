@@ -1,5 +1,5 @@
 {
-  "name": "danger-plugin-flow",
+  "name": "@tychot/danger-plugin-flow",
   "description": "Ensure adoption of flowtype",
   "author": {
     "name": "tychota",
@@ -7,17 +7,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tychota/danger-plugin-flow.git"
+    "url": "https://github.com/tychota/taiichi.git"
   },
   "bugs": {
-    "url": "https://github.com/tychota/danger-plugin-flow/issues"
+    "url": "https://github.com/tychota/taiichi/issues"
   },
-  "homepage": "https://github.com/tychota/danger-plugin-flow#readme",
-  "keywords": [
-    "danger",
-    "danger-plugin",
-    "flowtype"
-  ],
+  "homepage": "https://github.com/tychota/taiichi/packages/danger-plugin-flow#readme",
+  "keywords": ["danger", "danger-plugin", "flowtype"],
   "version": "1.0.0",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
@@ -28,13 +24,14 @@
     "docs": "esdoc -c .esdoc.json",
     "prepublish": "npm run build",
     "prettier": "prettier",
-    "prettier-write": "npm run prettier -- --parser typescript --no-semi --trailing-comma es5 --write --print-width 120",
+    "prettier-write":
+      "npm run prettier -- --parser typescript --no-semi --trailing-comma es5 --write --print-width 120",
     "prettier-project": "npm run prettier-write -- 'src/**/*.{ts,tsx}'",
     "lint": "tslint \"src/**/*.ts\""
   },
   "license": "MIT",
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=8.0.0"
   },
   "devDependencies": {
     "ts-jest": "^20.0.0",
@@ -44,31 +41,15 @@
     "jest": "^20.0.1",
     "lint-staged": "^3.4.1",
     "prettier": "^1.3.1",
-    "typescript": "^2.3.2"
-  },
-  "optionalDependencies": {
+    "typescript": "^2.3.2",
     "esdoc": "^0.5.2"
   },
-  "lint-staged": {
-    "*.@(ts|tsx)": [
-      "tslint --fix",
-      "npm run prettier-write --",
-      "git add"
-    ]
-  },
   "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
+    "moduleFileExtensions": ["ts", "tsx", "js"],
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "(.test)\\.(ts|tsx)$",
-    "testPathIgnorePatterns": [
-      "\\.snap$",
-      "<rootDir>/node_modules/"
-    ]
+    "testPathIgnorePatterns": ["\\.snap$", "<rootDir>/node_modules/"]
   }
 }

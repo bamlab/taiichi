@@ -1,14 +1,16 @@
+sudo: false
 language: node_js
 cache:
   directories:
     - ~/.npm
+    - node_modules
 notifications:
   email: false
 node_js:
   - '9'
-after_success:
-  - npm install -g travis-deploy-once@4
-  - travis-deploy-once "npm run semantic-release"
+before_install: .travis/before_install.sh
+after_success: .travis/after_success.sh
+script: npm run lint && npm test
 branches:
   except:
     - /^v\d+\.\d+\.\d+$/
