@@ -1,7 +1,8 @@
 {
-  "devDependencies": {
-    "cz-lerna-changelog": "^1.2.1",
-    "lerna": "^2.5.1"
+  "scripts": {
+    "precommit": "lint-staged",
+    "commit": "git-cz",
+    "commitmsg": "validate-commit-msg"
   },
   "version": "0.0.0-development",
   "repository": {
@@ -14,6 +15,10 @@
     }
   },
   "dependencies": {
-    "lerna-semantic-release": "^9.1.0"
+  },
+  "devDependencies": {
+    "cz-lerna-changelog": "^1.2.1",
+    "lerna-semantic-release": "^9.1.0",
+    "lerna": "^2.5.1"
   }
 }
