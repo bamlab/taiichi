@@ -8,6 +8,14 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
 fi
 
 if [[ $TRAVIS_BRANCH == 'master' ]]; then
+  rm -rf .git
+  git init
+  git clean -dfx
+  git remote add origin https://github.com/tychota/taiichi.git
+  git fetch origin
+  git clone https://github.com/$TRAVIS_REPO_SLUG.git $TRAVIS_REPO_SLUG
+  git checkout $TRAVIS_BRANCH
+
   git config credential.helper store
   echo "https://${RELEASE_GH_USERNAME}:${RELEASE_GH_TOKEN}@github.com/tychota/taiichi" > ~/.git-credentials
 

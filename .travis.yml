@@ -11,6 +11,5 @@ node_js:
 before_install: .travis/before_install.sh
 after_success: .travis/after_success.sh
 script: npm run lint && npm test
-branches:
-  except:
-    - /^v\d+\.\d+\.\d+$/
+git:
+  depth: 1
