@@ -8,7 +8,7 @@ export declare function fail(message: string): void;
 export declare function markdown(message: string): void;
 
 import * as fs from "fs";
-import markdownTable from "markdown-table";
+import * as markdownTable from "markdown-table";
 import * as path from "path";
 
 function absolute(relPath) {
