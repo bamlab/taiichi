@@ -1,5 +1,15 @@
-<a name="2.2.0"></a>
-# 2.2.0 (2018-01-16)
+<a name="2.3.0"></a>
+# 2.3.0 (2018-01-16)
+
+
+
+<a name="2.3.0"></a>
+# 2.3.0 (2018-01-16)
+
+
+### Features
+
+* **flow:** stabilize code linting ([a154841](https://github.com/tychota/taiichi/commit/a154841))
 
 
 

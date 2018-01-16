@@ -21,6 +21,7 @@ const flowIgnorePaths = [
   "build",
   "examples",
   "doc",
+  "dist",
   "android",
   "ios",
   "bin",
