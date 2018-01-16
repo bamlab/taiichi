@@ -8,6 +8,7 @@ export declare function fail(message: string): void;
 export declare function markdown(message: string): void;
 
 import * as fs from "fs";
+import * as _ from "lodash";
 import * as markdownTable from "markdown-table";
 import * as path from "path";
 
@@ -78,7 +79,7 @@ ${markdownTable([
       ["Name", "Addition or existing file"],
       ...unFlowedFiles.map(file => [
         file,
-        file in newUnFlowedFiles ? ":heavy_plus_sign: new file" : ":pencil2: existing file",
+        _.includes(newUnFlowedFiles, file) ? ":heavy_plus_sign: new file" : ":pencil2: existing file",
       ]),
     ])}
 

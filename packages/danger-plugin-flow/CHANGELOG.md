@@ -1,5 +1,15 @@
-<a name="2.4.1"></a>
-## 2.4.1 (2018-01-16)
+<a name="2.5.0"></a>
+# 2.5.0 (2018-01-16)
+
+
+
+<a name="2.5.0"></a>
+# 2.5.0 (2018-01-16)
+
+
+### Features
+
+* **flow:** ident the markdown correctly ([6d12e92](https://github.com/tychota/taiichi/commit/6d12e92))
 
 
 
