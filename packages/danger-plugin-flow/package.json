@@ -18,7 +18,7 @@
     "danger-plugin",
     "flowtype"
   ],
-  "version": "2.1.0",
+  "version": "2.2.0",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
   "scripts": {
@@ -35,6 +35,9 @@
   "license": "MIT",
   "engines": {
     "node": ">=8.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "devDependencies": {
     "@types/jest": "^19.2.4",
