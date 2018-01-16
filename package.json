@@ -19,11 +19,12 @@
     }
   },
   "lint-staged": {
-    "*.@(ts|tsx)": ["tslint --fix", "npm run prettier-write --", "git add"]
+    "*.@(ts|tsx)": ["tslint --fix", "lerna run prettier-write --", "git add"]
   },
   "devDependencies": {
     "cz-lerna-changelog": "^1.2.1",
     "lerna": "^2.5.1",
-    "lerna-semantic-release": "^9.1.0"
+    "lerna-semantic-release": "^9.1.0",
+    "lint-staged": "^6.0.0"
   }
 }
