@@ -13,11 +13,7 @@
     "url": "https://github.com/tychota/taiichi/issues"
   },
   "homepage": "https://github.com/tychota/taiichi/packages/danger-plugin-flow#readme",
-  "keywords": [
-    "danger",
-    "danger-plugin",
-    "flowtype"
-  ],
+  "keywords": ["danger", "danger-plugin", "flowtype"],
   "version": "2.2.0",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
@@ -28,7 +24,7 @@
     "docs": "esdoc -c .esdoc.json",
     "prepublish": "npm run build",
     "prettier": "prettier",
-    "prettier-write": "npm run prettier -- --parser typescript --no-semi --trailing-comma es5 --write --print-width 120",
+    "prettier-write": "npm run prettier -- --parser typescript --trailing-comma all --write --print-width 120",
     "prettier-project": "npm run prettier-write -- 'src/**/*.{ts,tsx}'",
     "lint": "tslint \"src/**/*.ts\""
   },
@@ -52,19 +48,12 @@
     "typescript": "^2.3.2"
   },
   "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
+    "moduleFileExtensions": ["ts", "tsx", "js"],
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "(.test)\\.(ts|tsx)$",
-    "testPathIgnorePatterns": [
-      "\\.snap$",
-      "<rootDir>/node_modules/"
-    ]
+    "testPathIgnorePatterns": ["\\.snap$", "<rootDir>/node_modules/"]
   },
   "dependencies": {
     "markdown-table": "^1.1.1"
