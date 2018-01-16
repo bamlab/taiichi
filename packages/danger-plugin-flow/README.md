@@ -18,10 +18,12 @@ At a glance:
 
 ```js
 // dangerfile.js
-import flow from 'danger-plugin-flow'
+import { schedule } from "danger";
+import flow from "danger-plugin-flow";
 
-flow()
+schedule(flow());
 ```
+
 ## Changelog
 
 See the GitHub [release history](https://github.com/tychota/danger-plugin-flow/releases).
