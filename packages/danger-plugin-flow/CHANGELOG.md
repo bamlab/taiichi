@@ -1,5 +1,15 @@
-<a name="2.4.0"></a>
-# 2.4.0 (2018-01-16)
+<a name="2.4.1"></a>
+## 2.4.1 (2018-01-16)
+
+
+
+<a name="2.4.1"></a>
+## 2.4.1 (2018-01-16)
+
+
+### Bug Fixes
+
+* **fflow:** fix import of markdown table ([0779243](https://github.com/tychota/taiichi/commit/0779243))
 
 
 

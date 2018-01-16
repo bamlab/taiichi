@@ -11,6 +11,8 @@ import * as fs from "fs";
 import * as markdownTable from "markdown-table";
 import * as path from "path";
 
+const STANDARD_URL = "https://bamtech.gitbooks.io/dev-standards/flowtype/flowtype.s.html";
+
 function absolute(relPath) {
   return path.resolve(__dirname, relPath);
 }
@@ -49,12 +51,12 @@ function checkForFlow(filePath) {
 /**
  * Ensure adoption of flowtype
  */
-export default function flow(settings = {}) {
+export default async function flow(settings = {}) {
   const newJsFiles = danger.git.created_files.filter(p => p.endsWith("js"));
   const modifiedJsFiles = danger.git.created_files.filter(p => p.endsWith("js"));
 
   const newUnFlowedFiles = newJsFiles.filter(checkForFlow);
-  const modifiedUnFlowedFiles = newJsFiles.filter(checkForFlow);
+  const modifiedUnFlowedFiles = modifiedJsFiles.filter(checkForFlow);
 
   const unFlowedFiles = [...newUnFlowedFiles, ...modifiedJsFiles];
 
@@ -63,24 +65,27 @@ export default function flow(settings = {}) {
 
   if (unFlowedFiles.length > 0) {
     failOrWarn(`${newOrExisting} files have not @flow enabled`);
-    const explanations: string = `## ${newOrExisting} files have not @flow enabled \
+    markdown(`## ${newOrExisting} files have not @flow enabled
 
-    - **Rules**: the rule is to have each \`*.js\` files of your codebase having a \`@flow\` or a \`@flow weak\`
-    comment on first line.
-    Then [flowtype](https://flow.org/) can parse your file and detect bugs before they happen, like detecting
-    \`cannot access property "bar" of undefined \` and provide autocompletion in your IDE.
+- **Rules**: the rule is to have each \`*.js\` files of your codebase having a \`@flow\` or a \`@flow weak\`
+comment on first line.
+Then [flowtype](https://flow.org/) can parse your file and detect bugs before they happen, like detecting
+\`cannot access property "bar" of undefined \` and provide autocompletion in your IDE.
 
-    - **Failing**: the following files failed the rules
+- **Failing**: the following files failed the rules
 
-    ${markdownTable([
+${markdownTable([
       ["Name", "Addition or existing file"],
-      ...unFlowedFiles.map(file => [file, file in newUnFlowedFiles ? ":heavy_plus_sign:" : ":pencil2:"]),
+      ...unFlowedFiles.map(file => [
+        file,
+        file in newUnFlowedFiles ? ":heavy_plus_sign: new file" : ":pencil2: existing file",
+      ]),
     ])}
 
-    - **Why these is important**: If there is no @flow declaration, flow ignore the file. That means that you expect
-    flow to give your error when it would not do.
-    - **How**: read the standard [about flow](https://bamtech.gitbooks.io/dev-standards/flowtype/flowtype.s.html)
-    `;
-    markdown(explanations);
+- **Why these is important**: If there is no @flow declaration, flow ignore the file. That means that you expect
+flow to give your error when it would not do.
+- **How to fix**: read the dev-standard [about flow](${STANDARD_URL})
+- **Contact / owner**: [Tycho Tatitscheff](https://keybase.io/tychot)
+  `);
   }
 }
