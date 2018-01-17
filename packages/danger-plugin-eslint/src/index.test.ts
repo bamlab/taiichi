@@ -1,4 +1,4 @@
-import flow from "./index";
+import eslint from "./index";
 
 declare const global: any;
 
@@ -22,7 +22,7 @@ describe("flow()", () => {
       github: { pr: { title: "My Test Title" } },
     };
 
-    flow();
+    eslint({});
 
     expect(global.message).toHaveBeenCalledWith("PR Title: My Test Title");
   });
