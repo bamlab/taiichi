@@ -6,6 +6,10 @@
 
 > Address your technical dept at some point
 
+## Credits
+
+This package is more or less a fork from `danger-plugin-fixme` from @zetaron, licensed under MIT.
+
 ## Usage
 
 Install:
@@ -26,7 +30,7 @@ schedule(todo());
 
 ## Changelog
 
-See the GitHub [release history](https://github.com/tychota/danger-plugin-flow/releases).
+See the GitHub [release history](https://github.com/tychota/taiichi/releases).
 
 ## Contributing
 

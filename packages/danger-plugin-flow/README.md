@@ -26,7 +26,7 @@ schedule(flow());
 
 ## Changelog
 
-See the GitHub [release history](https://github.com/tychota/danger-plugin-flow/releases).
+See the GitHub [release history](https://github.com/tychota/taiichi/releases).
 
 ## Contributing
 

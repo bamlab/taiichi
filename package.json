@@ -5,7 +5,6 @@
     "commit": "git-cz",
     "semantic-release": "lerna-semantic-release pre && lerna-semantic-release post && lerna-semantic-release perform",
     "commitmsg": "validate-commit-msg",
-    "postinstall": "lerna bootstrap",
     "prepush": "npm run test",
     "test": "lerna run test"
   },

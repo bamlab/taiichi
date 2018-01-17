@@ -1,5 +1,15 @@
-<a name="2.6.0"></a>
-# 2.6.0 (2018-01-16)
+<a name="2.7.0"></a>
+# 2.7.0 (2018-01-17)
+
+
+
+<a name="2.7.0"></a>
+# 2.7.0 (2018-01-17)
+
+
+### Features
+
+* **explanations:** put explanations in spoiler ([ff85f17](https://github.com/tychota/taiichi/commit/ff85f17))
 
 
 
