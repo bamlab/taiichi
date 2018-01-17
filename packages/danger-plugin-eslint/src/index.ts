@@ -18,7 +18,7 @@ export default async function eslint() {
   const filesToLint = danger.git.created_files.concat(danger.git.modified_files).filter(p => p.endsWith("js"));
   const cli = new CLIEngine({});
   const lintResultsNested = cli
-    .executeOnFiles(["."])
+    .executeOnFiles([process.cwd()])
     .results.map(
       file =>
         file.messages.length > 0
