@@ -18,6 +18,14 @@ function absolute(relPath) {
   return path.resolve(__dirname, relPath);
 }
 
+// async function filter(arr, callback) {
+//   return (await Promise.all(
+//     arr.map(async item => {
+//       return (await callback(item)) ? item : undefined;
+//     }),
+//   )).filter(i => i !== undefined);
+// }
+
 const flowIgnorePaths = [
   "node_modules",
   "test",
@@ -34,6 +42,7 @@ const flowIgnorePaths = [
   return absolute(rel);
 });
 
+/* async */
 function checkForFlow(filePath) {
   let i = 0;
   const len = flowIgnorePaths.length;
@@ -46,20 +55,24 @@ function checkForFlow(filePath) {
     i++;
   }
   const content = fs.readFileSync(filePath);
+  // const content = await danger.github.utils.fileContents(filePath);
   return !content.includes("@flow");
 }
 
 /**
- * Ensure adoption of flowtype
+ * Ensure adoption of flow-type
  */
 export default async function flow(settings = {}) {
   const newJsFiles = danger.git.created_files.filter(p => p.endsWith("js"));
   const modifiedJsFiles = danger.git.created_files.filter(p => p.endsWith("js"));
 
+  // const newUnFlowedFiles = await filter(newJsFiles, checkForFlow);
+  // const modifiedUnFlowedFiles = await filter(modifiedJsFiles, checkForFlow);
+
   const newUnFlowedFiles = newJsFiles.filter(checkForFlow);
   const modifiedUnFlowedFiles = modifiedJsFiles.filter(checkForFlow);
 
-  const unFlowedFiles = [...newUnFlowedFiles, ...modifiedJsFiles];
+  const unFlowedFiles = [...newUnFlowedFiles, ...modifiedUnFlowedFiles];
 
   const failOrWarn = newUnFlowedFiles.length > 0 ? fail : warn;
   const newOrExisting = newUnFlowedFiles.length > 0 ? "New" : "Existing";

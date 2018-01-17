@@ -22,7 +22,7 @@ describe("flow()", () => {
       github: { pr: { title: "My Test Title" } },
     };
 
-    eslint({});
+    eslint();
 
     expect(global.message).toHaveBeenCalledWith("PR Title: My Test Title");
   });
