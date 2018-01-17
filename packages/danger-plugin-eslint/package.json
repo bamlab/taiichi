@@ -1,0 +1,75 @@
+{
+  "name": "@tychot/danger-plugin-eslint",
+  "description": "See the lint, even for warnings",
+  "author": {
+    "name": "tychota",
+    "email": "tychot@bam.tech"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tychota/taiichi.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tychota/taiichi/issues"
+  },
+  "homepage": "https://github.com/tychota/taiichi/packages/danger-plugin-eslint#readme",
+  "keywords": [
+    "danger",
+    "danger-plugin",
+    "flowtype"
+  ],
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest",
+    "predocs": "rm -rf docs/",
+    "docs": "esdoc -c .esdoc.json",
+    "prepublish": "npm run build",
+    "prettier": "prettier",
+    "prettier-write": "npm run prettier -- --parser typescript --trailing-comma all --write --print-width 120",
+    "prettier-project": "npm run prettier-write -- 'src/**/*.{ts,tsx}'",
+    "lint": "tslint \"src/**/*.ts\""
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/jest": "^19.2.4",
+    "@types/lodash": "^4.14.92",
+    "@types/node": "^9.3.0",
+    "danger": "*",
+    "esdoc": "^0.5.2",
+    "jest": "^20.0.1",
+    "lint-staged": "^3.4.1",
+    "prettier": "^1.3.1",
+    "ts-jest": "^20.0.0",
+    "tslint": "^5.4.3",
+    "typescript": "^2.3.2"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(.test)\\.(ts|tsx)$",
+    "testPathIgnorePatterns": [
+      "\\.snap$",
+      "<rootDir>/node_modules/"
+    ]
+  },
+  "dependencies": {
+    "eslint": "^4.15.0",
+    "lodash": "^4.17.4",
+    "markdown-table": "^1.1.1"
+  }
+}
