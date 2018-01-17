@@ -1,5 +1,15 @@
-<a name="2.7.0"></a>
-# 2.7.0 (2018-01-17)
+<a name="2.8.0"></a>
+# 2.8.0 (2018-01-17)
+
+
+
+<a name="2.8.0"></a>
+# 2.8.0 (2018-01-17)
+
+
+### Features
+
+* **eslint:** make eslint package works ([36520c7](https://github.com/tychota/taiichi/commit/36520c7))
 
 
 
