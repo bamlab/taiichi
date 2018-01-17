@@ -70,7 +70,11 @@ export default async function flow(settings = {}) {
 
   if (filesWithTodo.length > 0) {
     inform(`${newOrExisting} files have some todo comment(s)`);
-    markdown(`## ${newOrExisting} files have some todo comment(s)
+    markdown(`#### Explanations for \`${newOrExisting} files have some todo comment(s)\`
+
+<details>
+<summary>Open for detailed explanation</summary>
+<p>
 
 Checks if you can address the todo in your PR. So you can improve technical dept of this repository.
 
@@ -87,6 +91,9 @@ ${markdownTable([
     ])}
 
 - **Contact / owner**: [Tycho Tatitscheff](https://keybase.io/tychot)
+
+</p>
+</details>
   `);
   }
 }

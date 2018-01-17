@@ -66,7 +66,11 @@ export default async function flow(settings = {}) {
 
   if (unFlowedFiles.length > 0) {
     failOrWarn(`${newOrExisting} files have not @flow enabled`);
-    markdown(`## ${newOrExisting} files have not @flow enabled
+    markdown(`#### Explanations for \`${newOrExisting} files have not @flow enabled\`
+
+<details>
+<summary>Open for detailed explanation</summary>
+<p>
 
 - **Rules**: the rule is to have each \`*.js\` files of your codebase having a \`@flow\` or a \`@flow weak\`
 comment on first line.
@@ -87,6 +91,9 @@ ${markdownTable([
 flow to give your error when it would not do.
 - **How to fix**: read the dev-standard [about flow](${STANDARD_URL})
 - **Contact / owner**: [Tycho Tatitscheff](https://keybase.io/tychot)
+
+</p>
+</details>
   `);
   }
 }

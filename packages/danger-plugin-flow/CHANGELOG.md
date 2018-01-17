@@ -1,5 +1,20 @@
-<a name="2.5.0"></a>
-# 2.5.0 (2018-01-16)
+<a name="2.6.0"></a>
+# 2.6.0 (2018-01-16)
+
+
+
+<a name="2.6.0"></a>
+# 2.6.0 (2018-01-16)
+
+
+### Bug Fixes
+
+* **flow:** improve dx ([8630b5d](https://github.com/tychota/taiichi/commit/8630b5d))
+
+
+### Features
+
+* **plugin:** add todo plugin ([2a0f491](https://github.com/tychota/taiichi/commit/2a0f491))
 
 
 
