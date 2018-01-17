@@ -18,7 +18,7 @@
     "danger-plugin",
     "flowtype"
   ],
-  "version": "2.6.0",
+  "version": "2.7.0",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
   "scripts": {
