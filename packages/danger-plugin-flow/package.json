@@ -1,5 +1,5 @@
 {
-  "name": "@bamtech/danger-plugin-flow",
+  "name": "@bam.tech/danger-plugin-flow",
   "description": "Ensure adoption of flowtype",
   "author": {
     "name": "tychota",

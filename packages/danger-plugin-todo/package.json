@@ -1,5 +1,5 @@
 {
-  "name": "@bamtech/danger-plugin-todo",
+  "name": "@bam.tech/danger-plugin-todo",
   "description": "Address your technical dept at some points",
   "author": {
     "name": "tychota",

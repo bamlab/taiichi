@@ -1,5 +1,5 @@
 {
-  "name": "@bamtech/danger-plugin-eslint",
+  "name": "@bam.tech/danger-plugin-eslint",
   "description": "See the lint, even for warnings",
   "author": {
     "name": "tychota",
