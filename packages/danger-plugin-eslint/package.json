@@ -1,5 +1,5 @@
 {
-  "name": "@tychot/danger-plugin-eslint",
+  "name": "@bamtech/danger-plugin-eslint",
   "description": "See the lint, even for warnings",
   "author": {
     "name": "tychota",
@@ -13,11 +13,7 @@
     "url": "https://github.com/tychota/taiichi/issues"
   },
   "homepage": "https://github.com/tychota/taiichi/packages/danger-plugin-eslint#readme",
-  "keywords": [
-    "danger",
-    "danger-plugin",
-    "flowtype"
-  ],
+  "keywords": ["danger", "danger-plugin", "flowtype"],
   "version": "2.2.1",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
@@ -53,19 +49,12 @@
     "typescript": "^2.3.2"
   },
   "jest": {
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js"
-    ],
+    "moduleFileExtensions": ["ts", "tsx", "js"],
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "(.test)\\.(ts|tsx)$",
-    "testPathIgnorePatterns": [
-      "\\.snap$",
-      "<rootDir>/node_modules/"
-    ]
+    "testPathIgnorePatterns": ["\\.snap$", "<rootDir>/node_modules/"]
   },
   "dependencies": {
     "eslint": "^4.15.0",

@@ -1,5 +1,15 @@
-<a name="2.2.0"></a>
-# 2.2.0 (2018-01-17)
+<a name="2.2.1"></a>
+## 2.2.1 (2018-01-17)
+
+
+
+<a name="2.2.1"></a>
+## 2.2.1 (2018-01-17)
+
+
+### Bug Fixes
+
+* **eslint:** use process.cwd() to indicate the directory of linting ([e35b93e](https://github.com/tychota/taiichi/commit/e35b93e))
 
 
 
