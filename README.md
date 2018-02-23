@@ -12,6 +12,10 @@ It is sucessfully used by big companies to provides quality by helping the revie
 
 <img src="./docs/danger.png" width="750" />
 
+When you will use it on your repository, you will get a comment by danger:
+
+<img src="./docs/results.png" width="750" />
+
 ## How is it structured
 
 ### Plugins
