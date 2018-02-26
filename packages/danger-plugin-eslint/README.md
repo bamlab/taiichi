@@ -15,7 +15,7 @@ This package is more or less a fork from `danger-plugin-eslint` from @danpalmer,
 Install:
 
 ```sh
-yarn add @tychot/danger-plugin-eslint --dev
+yarn add @bam.tech/danger-plugin-eslint --dev
 ```
 
 At a glance:
@@ -23,7 +23,7 @@ At a glance:
 ```js
 // dangerfile.js
 import { schedule } from "danger";
-import eslint from "@tychot/danger-plugin-eslint";
+import eslint from "@bam.tech/danger-plugin-eslint";
 
 schedule(eslint());
 ```

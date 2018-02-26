@@ -11,7 +11,7 @@
 Install:
 
 ```sh
-yarn add @tychot/danger-plugin-flow --dev
+yarn add @bam.tech/danger-plugin-flow --dev
 ```
 
 At a glance:
@@ -19,7 +19,7 @@ At a glance:
 ```js
 // dangerfile.js
 import { schedule } from "danger";
-import flow from "@tychot/danger-plugin-flow";
+import flow from "@bam.tech/danger-plugin-flow";
 
 schedule(flow());
 ```

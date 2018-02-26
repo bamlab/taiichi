@@ -31,7 +31,7 @@ You can use like this:
 ```js
 // dangerfile.js
 import { schedule } from "danger";
-import todo from "@tychot/danger-plugin-todo";
+import todo from "@bam.tech/danger-plugin-todo";
 
 schedule(todo());
 ```

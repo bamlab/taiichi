@@ -15,7 +15,7 @@ This package is more or less a fork from `danger-plugin-fixme` from @zetaron, li
 Install:
 
 ```sh
-yarn add @tychot/danger-plugin-todo --dev
+yarn add @bam.tech/danger-plugin-todo --dev
 ```
 
 At a glance:
@@ -23,7 +23,7 @@ At a glance:
 ```js
 // dangerfile.js
 import { schedule } from "danger";
-import todo from "@tychot/danger-plugin-todo";
+import todo from "@bam.tech/danger-plugin-todo";
 
 schedule(todo());
 ```
