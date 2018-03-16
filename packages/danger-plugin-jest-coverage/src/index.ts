@@ -60,21 +60,21 @@ const generateMarkdownLineForFileCoverage = (filePath: string) => {
   const fileCoverage = getFileCoverageStats(filePath);
   const filePathWithoutFirstFolder = filePath.slice(filePath.indexOf("/") + 1);
 
-  return [`-> ${filePathWithoutFirstFolder}`].concat(fileCoverage.map(formatCoverageState));
+  return [`↦ ${filePathWithoutFirstFolder}`].concat(fileCoverage.map(formatCoverageState));
 };
 
 const generateCoverageTable = files => {
   const filesNeedingCoverage = files.filter(shouldFileHaveCoverage);
   const filesByFolder = groupBy(filesNeedingCoverage, file => file.split("/")[0]);
 
-  const table = [["File", "Branches", "Statements"]];
+  const table: string[][] = [];
 
   forEach(filesByFolder, (folderFiles, folderName) => {
-    table.push([`**${folderName}**`, "", ""]);
+    table.push([`:file_folder: **${folderName}**`, "", ""]);
     forEach(folderFiles, file => table.push(generateMarkdownLineForFileCoverage(file)));
   });
 
-  return generateMarkdownTable(table);
+  return table;
 };
 
 const shouldFileHaveCoverage = file =>
@@ -86,15 +86,16 @@ const shouldFileHaveCoverage = file =>
 
 export default async function jestCoverage() {
   const { git } = danger;
+
+  const coverageTable = [["File", "Branches", "Statements"]]
+    .concat([[], [":heavy_plus_sign: **NEW FILES**"], []])
+    .concat(generateCoverageTable(git.created_files))
+    .concat([[], [":pencil2: **MODIFIED FILES**"], []])
+    .concat(generateCoverageTable(git.modified_files));
+
   markdown(
     `# Coverage
 
-## New files
-
-${generateCoverageTable(git.created_files)}
-
-## Modified files
-
-${generateCoverageTable(git.modified_files)}`,
+${generateMarkdownTable(coverageTable)}`,
   );
 }
