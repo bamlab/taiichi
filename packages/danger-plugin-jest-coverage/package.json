@@ -7,10 +7,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/almouro/danger-plugin-jest-coverage.git"
+    "url": "https://github.com/bamlab/taiichi.git"
   },
   "bugs": {
-    "url": "https://github.com/almouro/danger-plugin-jest-coverage/issues"
+    "url": "https://github.com/bamlab/taiichi/issues"
   },
   "homepage": "https://github.com/almouro/danger-plugin-jest-coverage#readme",
   "keywords": ["danger", "danger-plugin", "jest", "coverage"],
