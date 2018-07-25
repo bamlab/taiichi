@@ -1,0 +1,11 @@
+{
+  "generator-danger-plugin": {
+    "promptValues": {
+      "authorName": "Antoine Doubovetzky",
+      "authorEmail": "antoined@bam.tech",
+      "githubUsername": "AntoineDoubovetzky",
+      "useYarn": true,
+      "useTypeScript": true
+    }
+  }
+}
