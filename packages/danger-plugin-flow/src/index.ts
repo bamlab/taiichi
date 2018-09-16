@@ -64,7 +64,7 @@ function checkForFlow(filePath) {
  */
 export default async function flow(settings = {}) {
   const newJsFiles = danger.git.created_files.filter(p => p.endsWith("js"));
-  const modifiedJsFiles = danger.git.created_files.filter(p => p.endsWith("js"));
+  const modifiedJsFiles = danger.git.modified_files.filter(p => p.endsWith("js"));
 
   // const newUnFlowedFiles = await filter(newJsFiles, checkForFlow);
   // const modifiedUnFlowedFiles = await filter(modifiedJsFiles, checkForFlow);
