@@ -1,5 +1,5 @@
 {
-  "name": "danger-plugin-jest-coverage",
+  "name": "@bam.tech/danger-plugin-jest-coverage",
   "description": "Display Jest coverage",
   "author": {
     "name": "Alexandre Moureaux",
