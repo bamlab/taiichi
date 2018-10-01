@@ -6,24 +6,13 @@ export declare function warn(message: string): void;
 export declare function fail(message: string): void;
 export declare function markdown(message: string): void;
 
-import { forEach, get, groupBy, includes, keyBy } from "lodash";
-import * as path from "path";
-
-const rootDir = process.cwd();
-
-const getFileAbsolutePath = filePath => path.join(rootDir, filePath);
-
-import * as parseCoverage from "byzantine";
+import { forEach, get, groupBy, includes } from "lodash";
 import * as generateMarkdownTable from "markdown-table";
-// Dynamic require of a json file, don't want to import
-// tslint:disable-next-line
-const json = require(getFileAbsolutePath("coverage/coverage-final.json"));
+import * as path from "path";
+import CoverageParser from "./coverageParser";
 
-const coverages = parseCoverage(json);
-const coverageByPath = keyBy(coverages, coverage => coverage.path);
-const getCoverageForFile = filePath => coverageByPath[getFileAbsolutePath(filePath)];
+const coverageParser = new CoverageParser();
 
-const getCoverageState = ({ covered, all }) => (all > 0 ? covered / all : 1);
 const roundPercentage = num => Math.round(num * 100) / 100;
 const formatCoverageState = (stat: number) => {
   const percentage = roundPercentage(stat * 100);
@@ -45,19 +34,8 @@ const formatCoverageState = (stat: number) => {
   // return `${percentage}%`;
 };
 
-const getFileCoverageStats = filePath => {
-  const fileCoverage = getCoverageForFile(filePath);
-
-  if (fileCoverage) {
-    const { branches, statements } = fileCoverage;
-    return [getCoverageState(branches), getCoverageState(statements)];
-  }
-
-  return [0, 0];
-};
-
 const generateMarkdownLineForFileCoverage = (filePath: string) => {
-  const fileCoverage = getFileCoverageStats(filePath);
+  const fileCoverage = coverageParser.getFileCoverageStats(filePath);
   const filePathWithoutFirstFolder = filePath.slice(filePath.indexOf("/") + 1);
 
   return [`↦ ${filePathWithoutFirstFolder}`].concat(fileCoverage.map(formatCoverageState));
@@ -87,15 +65,20 @@ const shouldFileHaveCoverage = file =>
 export default async function jestCoverage() {
   const { git } = danger;
 
-  const coverageTable = [["File", "Branches", "Statements"]]
-    .concat([[], [":heavy_plus_sign: **NEW FILES**"], []])
-    .concat(generateCoverageTable(git.created_files))
-    .concat([[], [":pencil2: **MODIFIED FILES**"], []])
-    .concat(generateCoverageTable(git.modified_files));
+  if (CoverageParser.coverageFileExists()) {
+    coverageParser.parse();
+    const coverageTable = [["File", "Branches", "Statements"]]
+      .concat([[], [":heavy_plus_sign: **NEW FILES**"], []])
+      .concat(generateCoverageTable(git.created_files))
+      .concat([[], [":pencil2: **MODIFIED FILES**"], []])
+      .concat(generateCoverageTable(git.modified_files));
 
-  markdown(
-    `# Coverage
+    markdown(
+      `# Coverage
 
 ${generateMarkdownTable(coverageTable)}`,
-  );
+    );
+  } else {
+    warn("No coverage file available, please run `yarn jest --coverage` before running this plugin.");
+  }
 }
