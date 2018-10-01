@@ -1,0 +1,11 @@
+{
+  "generator-danger-plugin": {
+    "promptValues": {
+      "authorName": "Alexandre Moureaux",
+      "authorEmail": "alexandrem@bam.tech",
+      "githubUsername": "almouro",
+      "useYarn": true,
+      "useTypeScript": true
+    }
+  }
+}
