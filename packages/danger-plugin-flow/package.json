@@ -13,8 +13,12 @@
     "url": "https://github.com/tychota/taiichi/issues"
   },
   "homepage": "https://github.com/tychota/taiichi/packages/danger-plugin-flow#readme",
-  "keywords": ["danger", "danger-plugin", "flowtype"],
-  "version": "2.8.0",
+  "keywords": [
+    "danger",
+    "danger-plugin",
+    "flowtype"
+  ],
+  "version": "2.8.1",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
   "scripts": {
@@ -49,12 +53,19 @@
     "typescript": "^2.3.2"
   },
   "jest": {
-    "moduleFileExtensions": ["ts", "tsx", "js"],
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
     "transform": {
       ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
     },
     "testRegex": "(.test)\\.(ts|tsx)$",
-    "testPathIgnorePatterns": ["\\.snap$", "<rootDir>/node_modules/"]
+    "testPathIgnorePatterns": [
+      "\\.snap$",
+      "<rootDir>/node_modules/"
+    ]
   },
   "dependencies": {
     "lodash": "^4.17.4",
