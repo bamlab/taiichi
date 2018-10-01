@@ -1,0 +1,9 @@
+{
+  "prettier.singleQuote": false,
+  "prettier.trailingComma": "es5",
+  "prettier.semi": false,
+  "prettier.printWidth": 120,
+  "files.exclude": {
+    "**/.git": true
+  }
+}
