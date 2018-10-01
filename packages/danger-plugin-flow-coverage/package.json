@@ -18,7 +18,7 @@
     "danger-plugin",
     "flow coverage"
   ],
-  "version": "0.0.0-development",
+  "version": "0.0.0",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
   "scripts": {
