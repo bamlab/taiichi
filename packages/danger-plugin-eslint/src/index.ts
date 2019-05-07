@@ -51,9 +51,9 @@ ${markdownTable(results.map(prettifyResults))}
 <summary>Open for detailed explanation</summary>
 <p>
 
-- **Rules**: Eslint analyse your codebase to detect nasty code
-- **Why these is important**: Eslint detects some nasty code that will lead to errors, like undefined usage
-- **How to fix**: fix the parsing error
+- **Rules**: Eslint analyses your codebase to detect nasty code
+- **Why this is important**: Eslint detects some nasty code that will lead to errors, like undefined usage
+- **How to fix**: Fix the parsing error
 - **Contact / owner**: [Tycho Tatitscheff](https://keybase.io/tychot)
 
 </p>
@@ -70,9 +70,9 @@ ${markdownTable(results.map(prettifyResults))}
 <summary>Open for detailed explanation</summary>
 <p>
 
-- **Rules**: Eslint analyse your codebase to detect nasty code
-- **Why these is important**: Eslint detects some nasty code that will lead to errors, like undefined usage
-- **How to fix**: read eslint documentation by using the rule name
+- **Rules**: Eslint analyses your codebase to detect nasty code
+- **Why this is important**: Eslint detects some nasty code that will lead to errors, like undefined usage
+- **How to fix**: Read eslint documentation by using the rule name
 - **Contact / owner**: [Tycho Tatitscheff](https://keybase.io/tychot)
 
 </p>
@@ -88,9 +88,9 @@ ${markdownTable(results.map(prettifyResults))}
 <summary>Open for detailed explanation</summary>
 <p>
 
-- **Rules**: Eslint analyse your codebase to detect nasty code
-- **Why these is important**: Eslint detects some nasty code that will lead to errors, like undefined usage
-- **How to fix**: read eslint documentation by using the rule name
+- **Rules**: Eslint analyses your codebase to detect nasty code
+- **Why this is important**: Eslint detects some nasty code that will lead to errors, like undefined usage
+- **How to fix**: Read eslint documentation by using the rule name
 - **Contact / owner**: [Tycho Tatitscheff](https://keybase.io/tychot)
 
 </p>
