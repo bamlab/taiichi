@@ -43,7 +43,7 @@
   },
   "dependencies": {
     "byzantine": "^1.1.0",
-    "lodash": "4.17.11",
+    "lodash": "4.17.19",
     "markdown-table": "^1.1.2"
   },
   "devDependencies": {
